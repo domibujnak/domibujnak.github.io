@@ -1,0 +1,516 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { getPublications } from "../lib/publications";
+
+const publications = await getPublications();
+---
+
+<Layout title="Research">
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Research</h1>
+
+    <p>
+      Making space for wildlife through research.
+    </p>
+  </div>
+</section>
+
+<main>
+
+  <section class="research-layout">
+
+    <aside class="sidebar">
+
+      <button class="tab active" data-tab="vision">
+        Research Vision
+      </button>
+
+      <button class="tab" data-tab="projects">
+        Projects
+      </button>
+
+      <button class="tab" data-tab="publications">
+        Publications
+      </button>
+
+      <button class="tab" data-tab="collaborators">
+        Collaborators
+      </button>
+
+      <button class="tab" data-tab="resources">
+        Data & Resources
+      </button>
+
+      <button class="tab" data-tab="teaching">
+        Teaching
+      </button>
+
+    </aside>
+
+    <article class="content">
+
+      <section class="panel active" id="vision">
+        <h2>Research Vision</h2>
+
+        <p>
+        My research asks how human-driven environmental change reshapes 
+        wildlife populations—and what those changes mean for their 
+        long-term persistence.
+
+        </p>
+
+        <p>
+          My work on wolverines across Eurasia showed dramatic losses 
+          of neutral genetic diversity and increasing population 
+          disconnectedness following near-extirpation in the mid-20th 
+          century. I then found similar patterns in wolf morphology: 
+          the most distinctive populations were often those that were 
+          isolated and genetically less diverse, with isolation 
+          frequently linked to human interventions.
+
+        </p>
+
+        <p>
+          These findings raise the questions that now drive my research: 
+          <strong>Are human-driven changes in wildlife phenotype caused by 
+          genetic evolution, phenotypic plasticity, or their interaction? 
+          What are the functional consequences of these changes? And how 
+          can we reduce the impacts of human activities on wildlife?</strong>
+
+        </p>
+
+        <p>
+          I aim to address these questions by combining field ecology, 
+          population genetics, morphology, quantitative analysis, and 
+          interdisciplinary collaboration. I am particularly interested 
+          in how species respond to changing environments, how those 
+          responses affect ecological function, and how human actions 
+          alter wildlife populations and their interactions with their 
+          habitats.
+
+        </p>
+
+        <p>
+          Ultimately, <strong>my goal is to connect evolutionary and ecological 
+          research with conservation practice</strong>—generating knowledge that 
+          can inform wildlife management, biodiversity conservation, 
+          and decisions about how we share landscapes with other species.  
+
+        </p>
+      </section>
+
+      <section class="panel" id="projects">
+        <h2>Projects</h2>
+
+        <p>
+
+        <img
+  src="/images/wolf-project.webp"
+  alt="Grey wolf"
+  class="project-image"
+/>
+
+<h2>Grey Wolf</h2>
+
+<p>
+  The Wolf Morphology project examines morphological variation within and among
+  grey wolf populations to better understand the ecological, evolutionary, and
+  environmental factors shaping body size and skull morphology. Combining museum
+  collections, morphometric analyses, and ecological data, the project explores
+  how wolves have adapted to different environments across their distribution.
+  The research also provides valuable historical perspectives on population
+  variation and contributes to our understanding of intraspecific diversity.
+</p>
+
+<h3>Fennoscandian Wolves</h3>
+
+<p>
+  This project investigates morphological variation in historical and
+  contemporary wolf populations across Fennoscandia. By analysing skulls
+  alongside ecological and geographic data, the study explores how environmental
+  conditions, prey availability, and population history have influenced wolf
+  morphology over time. The results contribute to our understanding of regional
+  adaptation and long-term changes in northern wolf populations.
+</p>
+
+<h3>North American Plains Wolves</h3>
+
+<p>
+  Focusing on wolves from the North American Great Plains, this project examines
+  geographic variation in morphology across one of the continent's most dynamic
+  ecosystems. Using museum specimens and quantitative morphometric approaches,
+  the research investigates how environmental gradients, prey communities,
+  humans, and historical population processes have shaped morphological
+  diversity.
+</p>
+
+
+<img
+  src="/images/wolverines-project.webp"
+  alt="Wolverine"
+  class="project-image"
+/>
+
+<h2>Wolverine</h2>
+
+<p>
+  The Wolverine Genetics project investigates the population genetics and genomic
+  diversity of wolverines across Eurasia. By analysing genetic variation within
+  and among populations, the project aims to improve our understanding of
+  population connectivity, genetic structure, and the evolutionary processes
+  that influence this elusive carnivore. The findings contribute to
+  evidence-based conservation by identifying patterns of gene flow, assessing
+  genetic health, and supporting the long-term management of wolverine
+  populations.
+</p>
+
+<!--
+<h3>Genomic Avenues</h3>
+
+<p>
+  Using genome-wide data, the project investigates adaptive genetic variation,
+  population history, and the genetic basis of ecological responses to
+  environmental change. By integrating genomics with ecological research, this
+  work aims to strengthen conservation strategies and improve our understanding
+  of the evolutionary potential of wolverine populations.
+</p>
+-->
+
+        </p>
+      </section>
+
+
+
+      <section class="panel" id="publications">
+  <h2>Publications</h2>
+
+ <div class="publications">
+
+{publications.map((paper) => {
+
+    
+    return (
+
+      <div class="publication">
+
+<span class="year">{paper.year}</span>
+        <div>
+
+         <div
+  class="authors"
+  set:html={paper.authors}
+>
+</div>
+
+<div class="title">
+  <strong>{paper.title}</strong>
+</div>
+
+<div class="journal">
+  <em>{paper.journal}</em>
+</div>
+
+<div class="doi">
+  <a href={`https://doi.org/${paper.doi}`} target="_blank">
+    {paper.doi}
+  </a>
+</div>
+
+        </div>
+
+      </div>
+
+    );
+
+})}
+
+</div>
+</section>
+
+
+
+
+
+      <section class="panel" id="collaborators">
+        <h2>Collaborators</h2>
+
+        <p>
+          ...
+        </p>
+      </section>
+
+      <section class="panel" id="resources">
+  <h2>Data & Resources</h2>
+
+  
+
+  <h3>Grey Wolf Skull</h3>
+
+  <div class="sketchfab-embed">
+    <iframe
+      title="Wolf Skull"
+      frameborder="0"
+      allowfullscreen
+      mozallowfullscreen="true"
+      webkitallowfullscreen="true"
+      allow="autoplay; fullscreen; xr-spatial-tracking"
+      src="https://sketchfab.com/models/326e36c2c7ec40cbb5920c5f3031dbe0/embed">
+    </iframe>
+  </div>
+
+  <p class="resource-caption">
+    Interactive 3D model of a grey wolf (<i>Canis lupus lupus</i>) skull used for morphological research
+    and educational purposes. This wolf was raised in captivity (zoo).
+  </p>
+
+</section>
+
+      <section class="panel" id="teaching">
+        <h2>Teaching</h2>
+
+        <p>
+            ...
+        </p>
+      </section>
+
+    </article>
+
+  </section>
+
+</main>
+
+
+</Layout>
+
+<style>
+  main {
+  padding-top: 2rem;
+}
+  .hero {
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem max(2rem, calc((100vw - 1300px) / 2));
+
+  background-image:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url("/images/research-hero.webp");
+
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+.hero-content{
+  max-width:700px;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  margin-bottom:.8rem;
+}
+
+.hero p{
+  font-size:1.3rem;
+  line-height:1.6;
+}
+  .intro{
+  max-width:700px;
+  margin:0 auto 4rem;
+}
+
+.research-layout{
+  display:grid;
+  grid-template-columns:240px minmax(0, 1100px);
+  justify-content:center;
+  gap:5rem;
+max-width: 1300px;
+  margin: 3rem auto 0;
+  }
+
+.project-image{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+
+  border-radius:14px;
+
+  margin-bottom:2rem;
+  margin-top:4rem;
+}
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+
+.content .project-image:first-child{
+  margin-top:0;
+}
+
+.tab{
+  background:none;
+  border:none;
+  text-align:left;
+  padding:1rem 1.2rem;
+  font-size:1rem;
+  cursor:pointer;
+
+  border-left:3px solid transparent;
+
+  color:#555;
+
+  transition:.25s;
+}
+
+.tab:hover{
+  color:#111;
+  background:#f8f8f8;
+}
+
+.tab.active{
+  border-left:3px solid #2d5a3d;
+  color:#111;
+  font-weight:600;
+  background:#f7faf7;
+}
+
+.content{
+  max-width:700px;
+  min-height:500px;
+}
+
+.content h2 {
+  border-bottom: 2px solid #d8d8d8;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.panel{
+  display:none;
+  animation:fade .25s ease;
+}
+
+.panel.active{
+  display:block;
+}
+
+.panel h2{
+  margin-top:0;
+}
+
+.panel p{
+  line-height:1.8;
+  font-size:1.05rem;
+}
+
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+
+}
+
+@media(max-width:900px){
+
+.research-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+flex-direction:row;
+flex-wrap:wrap;
+
+}
+
+}
+
+.publications{
+  margin-top:2rem;
+}
+
+.publication{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:1rem;
+
+  padding:1rem 0;
+
+  border-bottom:1px solid #e5e5e5;
+}
+
+.year{
+  font-weight:600;
+  color:#666;
+}
+
+.title{
+  line-height:1.6;
+}
+
+
+.sketchfab-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sketchfab-embed iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  border: none;
+}
+
+.resource-caption {
+  font-size: .95rem;
+  color: #666;
+}
+</style>
+
+
+<script>
+
+const tabs=document.querySelectorAll(".tab");
+const panels=document.querySelectorAll(".panel");
+
+tabs.forEach(tab=>{
+
+tab.addEventListener("click",()=>{
+
+tabs.forEach(t=>t.classList.remove("active"));
+panels.forEach(p=>p.classList.remove("active"));
+
+tab.classList.add("active");
+
+document
+.getElementById(tab.dataset.tab)
+.classList.add("active");
+
+});
+
+});
+
+
+
+
+
+
+</script>

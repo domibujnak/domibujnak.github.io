@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About">
+  <main>
+
+<section class="about-row">
+
+  <div class="about-image">
+    <img src="/images/about-photo.webp" alt="Portrait of Dominika">
+  </div>
+
+  <div class="about-text">
+    <h2>About Me</h2>
+
+    <p>
+      I am a wildlife researcher interested in how human activities reshape
+      wildlife populations, from their genetic diversity and connectivity
+      to their morphology and ecology.
+    </p>
+
+    <p>
+      My research has taken me from studying the population genetics of
+      wolverines across Eurasia to investigating morphological variation
+      in wolves. I am particularly interested in how isolation and
+      human-driven environmental change affect wildlife, and what these
+      changes mean for the animals themselves.
+    </p>
+
+    <p>
+      I combine field research, population genetics, morphology, and
+      quantitative analysis to understand wildlife responses to a changing
+      world and to help inform effective conservation.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="about-row reverse">
+
+  <div class="about-text">
+
+    <h2>My Journey</h2>
+
+    <p>
+      My interest in wildlife started with a fascination for animals 
+      and the environments they inhabit. Over time, that interest 
+      developed into a scientific focus on understanding how wildlife 
+      populations respond to environmental and human-driven change.    
+    </p>
+
+    <p>
+      Fieldwork and research across different regions have shaped 
+      the way I approach ecology: I am interested in the connection 
+      between what we can observe in an animal, what is happening 
+      within its population, and the broader landscape in which it lives. 
+    </p>
+
+  </div>
+
+  <div class="about-image">
+    <img src="/images/about_photo2.webp" alt="Fieldwork">
+  </div>
+
+</section>
+
+
+<section class="about-row">
+
+  <div class="about-image">
+    <img src="/images/about_photo3.jpg" alt="Fieldwork">
+  </div>
+  
+  <div class="about-text">
+
+    <h2>Beyond Research</h2>
+
+    <p>
+      Photography is an important part of how I experience and study 
+      wildlife. I see it not simply as a way to document animals, 
+      but as a powerful tool for observation, connection, and 
+      understanding. Spending time watching and photographing an 
+      animal can reveal details of its behaviour, character, 
+      interactions, and relationship with its surroundings that can 
+      easily be missed.
+    </p>
+
+    <p>
+      For me, photography creates a different way of looking at 
+      wildlife—one that encourages patience, attention, and curiosity. 
+      It helps me connect the scientific questions I ask with the 
+      animals themselves, and to share that perspective with others.
+    </p>
+
+
+  </div>
+
+
+</section>
+
+<section class="cv-section">
+
+  <h2>Curriculum Vitae</h2>
+
+  <iframe
+    src="/documents/WebCV.pdf"
+    width="100%"
+    height="900"
+    title="Curriculum Vitae">
+  </iframe>
+
+</section>
+
+
+</main>
+
+
+<style>
+
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:4rem 2rem;
+}
+
+.about-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:5rem;
+    align-items:center;
+    margin-bottom:6rem;
+}
+
+.about-row.reverse{
+    grid-template-columns:1fr 1fr;
+}
+
+.about-image img{
+    width:100%;
+    display:block;
+}
+
+.about-text h2{
+    margin-top:0;
+}
+
+.about-text p{
+    line-height:1.8;
+    font-size:1.05rem;
+}
+@media (max-width:900px){
+
+.about-row,
+.about-row.reverse{
+    grid-template-columns:1fr;
+    gap:2rem;
+}
+
+.about-row.reverse .about-image{
+    order:-1;
+}
+
+}
+
+
+.cv-section{
+    max-width:1300px;
+    margin:5rem auto;
+}
+
+.cv-section iframe{
+    width:100%;
+    height:900px;
+    border:none;
+}
+
+</style>
+</Layout>
+
+

@@ -1,0 +1,304 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Photography">
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Photography</h1>
+
+    <p>
+      "Just pause, observe, and appreciate the remarkable
+      complexity of the natural world."
+
+  </p>
+
+  </div>
+
+</section>
+
+<main>
+
+<!-- About -->
+
+<section class="intro">
+
+
+</section>
+
+<!-- Categories -->
+
+<section class="categories">
+
+<h2>Gallery</h2>
+
+
+
+
+
+
+<div class="cards">
+
+<a href="/photography/finland" class="card">
+
+<img src="/photographs/photo-finland.webp" alt="Finland">
+
+<div class="card-content">
+
+<h3>Finland</h3>
+
+</div>
+
+</a>
+
+
+
+
+
+
+<a href="/photography/slovakia" class="card">
+
+<img src="/photographs/photo-slovakia.webp" alt="Slovakia">
+
+<div class="card-content">
+
+<h3>Slovakia</h3>
+
+
+</div>
+
+</a>
+
+
+
+
+<a href="/photography/research-photo" class="card">
+
+<img src="/photographs/photo-research.webp" alt="Research photography">
+
+<div class="card-content">
+
+<h3>Research</h3>
+
+
+</div>
+
+</a>
+
+
+
+<a href="/photography/other" class="card">
+
+<img src="/photographs/photo-other.webp" alt="Other photography">
+
+<div class="card-content">
+
+<h3>Life Around us</h3>
+</div>
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<footer class="photo-copyright">
+  © 2026 Dominika Bujnáková. All photographs are copyrighted and may not be
+  reproduced, distributed, or used without permission.
+</footer>
+
+
+</main>
+
+</Layout>
+
+<style>
+
+.hero{
+
+min-height:55vh;
+
+display:flex;
+align-items:center;
+
+padding:4rem max(2rem, calc((100vw - 1300px)/2));
+
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url("/photographs/photo-hero.webp");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+
+}
+
+.hero-content{
+
+max-width:700px;
+
+}
+
+.hero h1{
+
+font-size:4rem;
+margin-bottom:1rem;
+
+}
+
+.hero p{
+
+font-size:1.3rem;
+line-height:1.6;
+
+}
+
+main{
+
+max-width:1300px;
+margin:auto;
+padding:2rem 2rem;
+
+}
+
+section{
+
+margin-bottom:2rem;
+
+}
+
+.intro{
+
+max-width:800px;
+margin:0 auto 1rem;
+}
+
+.intro p{
+
+line-height:1.8;
+font-size:1.05rem;
+
+}
+
+.categories h2{
+
+margin-bottom:2rem;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+
+gap:2rem;
+
+}
+
+.card{
+  background:transparent;
+  border-radius:0px;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  transition:.25s;
+}
+
+
+<--! this makes cards hover
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+-->
+
+.card:hover{
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+}
+
+.card img{
+ width:100%;
+ height:350px;
+ object-fit:cover;
+}
+
+.card-content{
+
+padding:1.5rem;
+
+}
+
+.card-content h3{
+
+margin-top:0;
+
+margin-bottom:.8rem;
+color:#f2f2f2;
+text-align:center;
+
+}
+
+.card-content p{
+
+line-height:1.7;
+
+}
+
+
+
+.quote{
+    max-width:800px;
+    margin:0 auto 3rem;
+    text-align:center;
+    font-style:italic;
+    font-size:1.2rem;
+    color:#555;
+    padding-top:2rem;
+    padding-bottom:3rem;
+}
+
+
+
+@media(max-width:900px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+}
+
+
+
+section{
+margin-bottom:2rem;
+}
+
+body{
+    background:#1b1b1b;
+    color:#f2f2f2;
+}
+
+.photo-copyright {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+
+</style>
