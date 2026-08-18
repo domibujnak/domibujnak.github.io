@@ -4,14 +4,14 @@ import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
 const photos = Object.values(
-  import.meta.glob("../../assets/photographs/research-photo/*.{webp,JPG,jpg,jpeg,png}", {
+  import.meta.glob("../../assets/photographs/research_photo/*.{webp,JPG,jpg,jpeg,png}", {
     eager: true,
     import: "default",
   })
 );
 ---
 
-<Layout title="Wildlife Photography">
+<Layout title="Photography">
 
 <section class="hero">
 
