@@ -6,9 +6,8 @@ import { Image } from "astro:assets";
 const photos = Object.values(
   import.meta.glob("../../assets/photographs/slovakia/*.{webp,JPG,jpg,jpeg,png}", {
     eager: true,
+    import: "default",
   })
-  ).sort((a, b) =>
-  b.default.src.localeCompare(a.default.src, undefined, { numeric: true })
 );
 ---
 
@@ -37,11 +36,13 @@ const photos = Object.values(
 
 {photos.map((photo) => (
 
-  <img
-    src={photo.default.src}
-    alt=""
-    loading="lazy"
-  />
+<Image
+  src={photo}
+  alt=""
+  width={1600}
+  format="webp"
+  loading="lazy"
+/>
 
 ))}
 
@@ -141,4 +142,4 @@ body{
   color: #888;
 }
 </style>
-</Layout>
+

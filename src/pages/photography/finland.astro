@@ -4,9 +4,8 @@ import Layout from "../../layouts/Layout.astro";
 const photos = Object.values(
   import.meta.glob("../../assets/photographs/Finland/*.{webp,JPG,jpg,jpeg,png}", {
     eager: true,
+    import: "default",
   })
-).sort((a, b) =>
-  b.default.src.localeCompare(a.default.src, undefined, { numeric: true })
 );
 ---
 
@@ -70,11 +69,13 @@ const photos = Object.values(
       <div class="gallery-grid">
 
         {photos.map((photo) => (
-          <img
-            src={photo.default.src}
-            alt=""
-            loading="lazy"
-          />
+         <Image
+          src={photo}
+          alt=""
+          width={1600}
+          format="webp"
+          loading="lazy"
+        />
         ))}
 
       </div>
