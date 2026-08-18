@@ -16,12 +16,17 @@ const { title = "Dominika Bujnáková"} = Astro.props;
     box-sizing: border-box;
   }
 
-  body {
-    margin: 0;
-    font-family: "Inter", Arial, sans-serif;
-    color: #222;
-    background: #fafafa;
-  }
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  color: #222;
+  background: #fafafa;
+}
+
+body.photography-page {
+  background: #1b1b1b;
+  color: #f2f2f2;
+}
 
 :global(header) {
   background: white;
@@ -77,11 +82,17 @@ padding: 1.25rem max(2rem, calc((100vw - 1300px) / 2));}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
+  <!-- Umami Analytics -->
+  <script 
+  defer src="https://cloud.umami.is/script.js" data-website-id="a950c67d-51fe-47da-9a65-2a67a877d866">
+  </script>
+
 
   </head>
 
-  <body>
-  <Header />
+<body class={Astro.url.pathname.startsWith("/photography") ? "photography-page" : ""}>  <Header />
   <slot />
 </body>
 </html>
+
+
