@@ -425,18 +425,21 @@ max-width: 1300px;
 
 @media(max-width:900px){
 
-.research-layout{
+  .research-layout {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-grid-template-columns:1fr;
+  .content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
 
-}
-
-.sidebar{
-
-flex-direction:row;
-flex-wrap:wrap;
-
-}
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
 }
 
