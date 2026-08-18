@@ -1,12 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const photos = Object.values(
-  import.meta.glob("../../assets/photographs/finland/*.{webp,JPG,jpg,jpeg,png}", {
-    eager: true,
-    import: "default",
-  })
-);
 ---
 
 <Layout title="Finland">
@@ -61,26 +55,6 @@ const photos = Object.values(
 
     </section>
 
-
-    <!-- Gallery -->
-
-    <section class="gallery">
-
-      <div class="gallery-grid">
-
-        {photos.map((photo) => (
-         <Image
-          src={photo}
-          alt=""
-          width={1600}
-          format="webp"
-          loading="lazy"
-        />
-        ))}
-
-      </div>
-
-    </section>
 
 <footer class="photo-copyright">
   © 2026 Dominika Bujnáková. All photographs are copyrighted and may not be
