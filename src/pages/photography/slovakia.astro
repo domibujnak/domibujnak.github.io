@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
 const photos = Object.values(
-  import.meta.glob("../../assets/photographs/Slovakia/*.{webp,JPG,jpg,jpeg,png}", {
+  import.meta.glob("../../assets/photographs/slovakia/*.{webp,JPG,jpg,jpeg,png}", {
     eager: true,
     import: "default",
   })
@@ -12,7 +12,7 @@ const photos = Object.values(
 ---
 
 <Layout title="Slovakia">
-
+<p>Number of photos: {photos.length}</p>
 <section class="hero">
 
   <div class="hero-content">
